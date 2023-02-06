@@ -9,6 +9,7 @@ import java.net.Socket;
 public class SClientOld {
     public static void main(String[] args) throws IOException {
         try {
+            // Creating client socket
             Socket clientSocket = new Socket("127.0.0.1", 5555);
             PrintWriter printer = new PrintWriter(clientSocket.getOutputStream());
             BufferedReader inputer = new BufferedReader(new InputStreamReader(System.in));
