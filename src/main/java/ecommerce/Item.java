@@ -10,7 +10,7 @@ public class Item {
     private boolean condition; // true for new, false for used
     private double salePrice;
 
-    private int SellerId;
+    private int sellerId;
 
     public Item(String itemName, int itemCategory, int itemId, List<String> keywords, boolean condition, double salePrice, int sellerId) {
         this.itemName = itemName;
@@ -19,7 +19,7 @@ public class Item {
         this.keywords = keywords;
         this.condition = condition;
         this.salePrice = salePrice;
-        SellerId = sellerId;
+        this.sellerId = sellerId;
     }
 
     public void setItemName(String itemName) {
@@ -47,7 +47,7 @@ public class Item {
     }
 
     public void setSellerId(int sellerId) {
-        SellerId = sellerId;
+        this.sellerId = sellerId;
     }
 
     public String getItemName() {
@@ -75,6 +75,6 @@ public class Item {
     }
 
     public int getSellerId() {
-        return SellerId;
+        return sellerId;
     }
 }
