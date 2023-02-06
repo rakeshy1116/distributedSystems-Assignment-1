@@ -1,10 +1,16 @@
 package ecommerce;
 
-import java.net.*;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-public class SellerServer {
+public class BuyerServer {
 
 //    private static SellerServer single_instance = null;
 //
@@ -72,13 +78,13 @@ public class SellerServer {
                   //  sleep(5000);
                     String[] components = inputLine.split(" ");
                     if(components[0].equals("1")) {
-                        out.println(createSellerAccount(components));
+                        out.println(createBuyerAccount(components));
                     }
                     else if(components[0].equals("2")) {
-                        out.println(loginSeller(components));
+                        out.println(loginBuyer(components));
                     }
                     else if(components[0].equals("3")) {
-                        out.println(logoutSeller(components));
+                        out.println(logoutBuyer(components));
                     }
                     else if(components[0].equals("4")) {
                         out.println(sellerRating(components));
@@ -300,7 +306,7 @@ public class SellerServer {
     }
 
     public static void main(String[] args) {
-        SellerServer server =  new SellerServer();
+        BuyerServer server =  new BuyerServer();
         server.start(5555);
     }
 
