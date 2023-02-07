@@ -10,3 +10,4 @@
 5 tv 2 picture view lcd hd contrast true 150 0 5
 6 0 110
 7 1 1
+8 1

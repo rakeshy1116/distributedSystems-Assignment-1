@@ -1,19 +1,26 @@
 package ecommerce;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@DynamoDBTable(tableName="Buyer")
 public class Buyer {
 
     private String buyerName;
     private Long buyerId;
-    private int itemsPurchase;
+    private List<Long> itemsPurchase;
 
     private String password;
 
     private boolean isLoggedin;
 
-    public Buyer(String buyerName, Long buyerId, int itemsPurchase, String password, Boolean isLoggedin) {
+    public Buyer(String buyerName, Long buyerId, List<Long> itemsPurchase, String password, Boolean isLoggedin) {
         this.buyerName = buyerName;
         this.buyerId = buyerId;
-        this.itemsPurchase = 0;
+        this.itemsPurchase = new ArrayList<>();
         this.password = password;
         this.isLoggedin = false;
     }
@@ -34,6 +41,7 @@ public class Buyer {
         this.buyerName = buyerName;
     }
 
+    @DynamoDBHashKey(attributeName="buyerId")
     public Long getBuyerId() {
         return buyerId;
     }
@@ -42,16 +50,23 @@ public class Buyer {
         this.buyerId = buyerId;
     }
 
-    public int getItemsPurchase() {
+    public List<Long> getItemsPurchase() {
         return itemsPurchase;
     }
 
-    public void setItemsPurchase(int itemsPurchase) {
+    public void setItemsPurchase(List<Long> itemsPurchase) {
         this.itemsPurchase = itemsPurchase;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public Buyer(Long buyerId) {
+        this.buyerId = buyerId;
+    }
+
+    public Buyer() {
     }
 
     public void setPassword(String password) {
