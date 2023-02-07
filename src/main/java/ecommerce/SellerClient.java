@@ -9,6 +9,19 @@ public class SellerClient {
     private PrintWriter out;
     private BufferedReader in;
 
+        public static void main(String[] args) throws IOException {
+            SellerClient client1 = new SellerClient();
+            client1.startConnection("127.0.0.1", 7777);
+            File file = new File(args[0]);
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String st;
+            while ((st = br.readLine()) != null) {
+                String msg1 = client1.sendMessage(st);
+                System.out.println(msg1);
+            }
+
+    }
+
     public void startConnection(String ip, int port) {
         try {
             clientSocket = new Socket(ip, port);
@@ -37,19 +50,5 @@ public class SellerClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-
-        public static void main(String[] args) throws IOException {
-            SellerClient client1 = new SellerClient();
-            client1.startConnection("127.0.0.1", 5555);
-            File file = new File(args[0]);
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String st;
-            while ((st = br.readLine()) != null) {
-                String msg1 = client1.sendMessage(st);
-                System.out.println(msg1);
-            }
-
     }
 }

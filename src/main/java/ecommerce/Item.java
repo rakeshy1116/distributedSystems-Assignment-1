@@ -1,7 +1,10 @@
 package ecommerce;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+
 import java.util.List;
 
-
+@DynamoDBTable(tableName="Item")
 public class Item {
     private String itemName;
     private int itemCategory;
@@ -69,6 +72,14 @@ public class Item {
         return itemCategory;
     }
 
+    public Item(Long itemId) {
+        this.itemId = itemId;
+    }
+
+    public Item() {
+    }
+
+    @DynamoDBHashKey(attributeName="itemId")
     public Long getItemId() {
         return itemId;
     }
