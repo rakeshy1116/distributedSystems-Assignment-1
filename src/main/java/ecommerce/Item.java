@@ -5,14 +5,24 @@ import java.util.List;
 public class Item {
     private String itemName;
     private int itemCategory;
-    private int itemId;
+    private Long itemId;
     private List<String> keywords;
     private boolean condition; // true for new, false for used
     private double salePrice;
 
-    private int sellerId;
+    private Long sellerId;
 
-    public Item(String itemName, int itemCategory, int itemId, List<String> keywords, boolean condition, double salePrice, int sellerId) {
+    private int itemQuantity;
+
+    public int getItemQuantity() {
+        return itemQuantity;
+    }
+
+    public void setItemQuantity(int itemQuantity) {
+        this.itemQuantity = itemQuantity;
+    }
+
+    public Item(String itemName, int itemCategory, Long itemId, List<String> keywords, boolean condition, double salePrice, Long sellerId, int itemQuantity) {
         this.itemName = itemName;
         this.itemCategory = itemCategory;
         this.itemId = itemId;
@@ -20,6 +30,7 @@ public class Item {
         this.condition = condition;
         this.salePrice = salePrice;
         this.sellerId = sellerId;
+        this.itemQuantity = itemQuantity;
     }
 
     public void setItemName(String itemName) {
@@ -30,7 +41,7 @@ public class Item {
         this.itemCategory = itemCategory;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Long itemId) {
         this.itemId = itemId;
     }
 
@@ -46,7 +57,7 @@ public class Item {
         this.salePrice = salePrice;
     }
 
-    public void setSellerId(int sellerId) {
+    public void setSellerId(Long sellerId) {
         this.sellerId = sellerId;
     }
 
@@ -58,7 +69,7 @@ public class Item {
         return itemCategory;
     }
 
-    public int getItemId() {
+    public Long getItemId() {
         return itemId;
     }
 
@@ -74,7 +85,7 @@ public class Item {
         return salePrice;
     }
 
-    public int getSellerId() {
+    public Long getSellerId() {
         return sellerId;
     }
 }

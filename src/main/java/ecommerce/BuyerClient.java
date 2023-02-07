@@ -4,7 +4,7 @@ package ecommerce;
 import java.io.*;
 import java.net.Socket;
 
-public class SellerClient {
+public class BuyerClient {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
@@ -41,8 +41,8 @@ public class SellerClient {
 
 
         public static void main(String[] args) throws IOException {
-            SellerClient client1 = new SellerClient();
-            client1.startConnection("127.0.0.1", 5555);
+            BuyerClient client1 = new BuyerClient();
+            client1.startConnection("127.0.0.1", 5556);
             File file = new File(args[0]);
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
