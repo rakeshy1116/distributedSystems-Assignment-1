@@ -61,6 +61,11 @@ public class BuyerServer {
 
         public void run() {
             try {
+                final long startTime = System.currentTimeMillis();
+
+
+
+
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 String inputLine;
@@ -96,12 +101,11 @@ public class BuyerServer {
                         out.println(purchaseHistory(components));
                     }
                     else if (".".equals(inputLine)) {
-                        out.println("bye");
+                        final long endTime = System.currentTimeMillis();
+                        out.println("Seller Server execution time: " + (endTime - startTime));
                         break;
-                    } else
-                        out.println(inputLine);
+                    }
                 }
-
                 in.close();
                 out.close();
                 clientSocket.close();
@@ -113,7 +117,7 @@ public class BuyerServer {
 //            }
         }
 
-        public String createBuyerAccount(String[] components) {
+        public synchronized String createBuyerAccount(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Buyer> query = new DynamoDBQueryExpression<>();
 //            PaginatedQueryList<Buyer> list = db.query(Buyer.class, query);
@@ -141,7 +145,7 @@ public class BuyerServer {
             return "Buyer Account Created with sellerId: " + String.valueOf(buyerID);
         }
 
-        public String loginBuyer(String[] components) {
+        public synchronized String loginBuyer(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
 
             DynamoDBQueryExpression<Buyer> query = new DynamoDBQueryExpression<>();
@@ -165,7 +169,7 @@ public class BuyerServer {
         }
 
 
-        public String logoutBuyer(String[] components) {
+        public synchronized String logoutBuyer(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Buyer> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new Buyer(Long.parseLong(components[1])));
@@ -182,7 +186,7 @@ public class BuyerServer {
         }
 
 
-        public String addToShoppingCart(String[] components) {
+        public synchronized String addToShoppingCart(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
 
             DynamoDBQueryExpression<Item> query1 = new DynamoDBQueryExpression<>();
@@ -223,7 +227,7 @@ public class BuyerServer {
             return "Added " + components[3] + " quantities of item with item id " + components[2] + " to shopping cart";
         }
 
-        public String removeFromShoppingCart(String[] components) {
+        public synchronized String removeFromShoppingCart(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
 
             DynamoDBQueryExpression<ShoppingCart> query = new DynamoDBQueryExpression<>();
@@ -254,7 +258,7 @@ public class BuyerServer {
 
 
 
-    public String clearShoppingCart(String[] components) {
+    public synchronized String clearShoppingCart(String[] components) {
         DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
         DynamoDBQueryExpression<ShoppingCart> query = new DynamoDBQueryExpression<>();
         query.setHashKeyValues(new ShoppingCart(Long.parseLong(components[1])));
@@ -270,7 +274,7 @@ public class BuyerServer {
         return "Shopping cart cleared for buyer id: " + components[1];
     }
 
-    public String displayShoppingCart(String[] components) {
+    public synchronized String displayShoppingCart(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<ShoppingCart> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new ShoppingCart(Long.parseLong(components[1])));
@@ -291,7 +295,7 @@ public class BuyerServer {
             return "Shopping cart for buyer id: " + components[1] + " " + ans.toString();
         }
 
-        public String sellerRating(String[] components) { //specify name in the query as well
+        public synchronized String sellerRating(String[] components) { //specify name in the query as well
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Seller> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new Seller(Long.parseLong(components[1])));
@@ -308,7 +312,7 @@ public class BuyerServer {
             }
             return "Seller Rating is: " + String.valueOf(rating);
         }
-        public String feedBackSeller(String[] components) { //specify name in the query as well
+        public synchronized String feedBackSeller(String[] components) { //specify name in the query as well
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Item> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new Item(Long.parseLong(components[1])));
@@ -344,10 +348,10 @@ public class BuyerServer {
             return "feedback given for seller: " + String.valueOf(currentSeller.getSellerId());
         }
 
-        public String searchItems(String[] components) {
+        public synchronized String searchItems(String[] components) {
             return "searched Items";
         }
-        public String purchaseHistory(String[] components) {
+        public synchronized String purchaseHistory(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Buyer> query1 = new DynamoDBQueryExpression<>();
             query1.setHashKeyValues(new Buyer(Long.parseLong(components[1])));
