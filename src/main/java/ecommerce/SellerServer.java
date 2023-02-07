@@ -80,7 +80,7 @@ public class SellerServer {
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 String inputLine;
                 while ((inputLine = in.readLine()) != null) {
-                   // sleep(2000);
+//                    sleep(2000);
                     String[] components = inputLine.split(" ");
                     if(components[0].equals("1")) {
                         out.println(createSellerAccount(components));
@@ -120,14 +120,14 @@ public class SellerServer {
             } catch (IOException e) {
             }
 
-//            }
+
 //             catch (InterruptedException e) {
 //                throw new RuntimeException(e);
 //            }
         }
 
 
-        public  String createSellerAccount(String[] components) {
+        public synchronized String createSellerAccount(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Seller> query = new DynamoDBQueryExpression<>();
 //            PaginatedQueryList<Seller> list = db.query(Seller.class, query);
@@ -151,10 +151,10 @@ public class SellerServer {
             Long sellerId = createSellerID();
             Seller seller = new Seller(components[1], sellerId, new ArrayList<>(List.of(0, 0)), 0, components[2]);
             db.save(seller);
-            return "Seller Account Created";
+            return "Seller Account Created with sellerId: " + String.valueOf(sellerId);
         }
 
-        public String loginSeller(String[] components) {
+        public synchronized String loginSeller(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
 
             DynamoDBQueryExpression<Seller> query = new DynamoDBQueryExpression<>();
@@ -180,7 +180,7 @@ public class SellerServer {
 
 
 
-        public String logoutSeller(String[] components) {
+        public synchronized String logoutSeller(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Seller> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new Seller(Long.parseLong(components[1])));
@@ -189,16 +189,14 @@ public class SellerServer {
             Iterator<Seller> iter = list.iterator();
             while(iter.hasNext()) {
                 Seller currentUser = iter.next();
-                if(currentUser.getSellerName().equals(components[2])) {
                     currentUser.setLoggedin(false);
                     db.save(currentUser);
-                    break;
+                   return "Logged out.. Log in back";
                 }
-            }
-                    return "Logged out.. Logged in";
+                    return "No user";
         }
 
-        public String sellerRating(String[] components) { //specify name in the query as well
+        public synchronized String sellerRating(String[] components) { //specify name in the query as well
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Seller> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new Seller(Long.parseLong(components[1])));
@@ -216,7 +214,7 @@ public class SellerServer {
             return "Seller Rating is: " + String.valueOf(rating);
         }
 
-        public String putItem(String[] components) { //specify name in the query as well
+        public synchronized String putItem(String[] components) { //specify name in the query as well
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             Long sellerId = Long.parseLong(components[10]);
             Long itemId = createItemID();
@@ -235,7 +233,7 @@ public class SellerServer {
             return "placed Item for sale with ItemId: " + String.valueOf(itemId);
         }
 
-        public String updateItemSalePrice(String[] components) { //assuming same seller is doing the update
+        public synchronized String updateItemSalePrice(String[] components) { //assuming same seller is doing the update
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Item> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new Item(Long.parseLong(components[1])));
@@ -250,7 +248,7 @@ public class SellerServer {
             return "Item price updated to: " + components[2];
         }
 
-        public String removeItem(String[] components) { //assuming same seller is doing the update
+        public synchronized String removeItem(String[] components) { //assuming same seller is doing the update
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
             DynamoDBQueryExpression<Item> query = new DynamoDBQueryExpression<>();
             query.setHashKeyValues(new Item(Long.parseLong(components[1])));
@@ -270,31 +268,24 @@ public class SellerServer {
             return components[2] + " quantities of Item with following ItemID: " + components[1] + " are removed.";
         }
 
-        public String displayItemsOnSale(String[] components) { //assuming same seller is doing the update
-            Database db = Database.getInstance();
-            Map<Long,Item> items = db.getItems();
-            Map<Long,Seller> sellers = db.getSellers();
-            Long sellerId = Long.valueOf(0);
-            synchronized (sellers) {
-                sellers = db.getSellers();
-                for(Map.Entry<Long,Seller> mp:sellers.entrySet())
-                {
-                    if(mp.getValue().getSellerName().equals(components[1]))
-                    {
-                        sellerId = mp.getValue().getSellerId();
-                        break;
-                    }
-                }
-            }
-            StringBuilder ans = new StringBuilder();
-            synchronized (items) {
+        public synchronized String displayItemsOnSale(String[] components) { //assuming same seller is doing the update
+            DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
+            DynamoDBQueryExpression<Item> query = new DynamoDBQueryExpression<>();
+            DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
 
-                for(Map.Entry<Long,Item> mp: items.entrySet()) {
-                    if(mp.getValue().getSellerId()==sellerId)
-                    {
-                        ans.append(mp.getValue().getItemName());
-                        ans.append(", ");
-                    }
+            PaginatedScanList<Item> list = db.scan(Item.class, scanExpression);
+
+            Iterator<Item> iter = list.iterator();
+
+            Long sellerId = Long.parseLong(components[1]);
+            StringBuilder ans = new StringBuilder();
+            while(iter.hasNext())
+            {
+                Item currentItem = iter.next();
+                if(currentItem.getSellerId()==sellerId)
+                {
+                    ans.append(currentItem.getItemName());
+                    ans.append(", ");
                 }
             }
             return "Following items are for sale: " + ans;
