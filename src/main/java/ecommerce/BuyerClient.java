@@ -42,7 +42,7 @@ public class BuyerClient {
 
         public static void main(String[] args) throws IOException {
             BuyerClient client1 = new BuyerClient();
-            client1.startConnection("127.0.0.1", 5555);
+            client1.startConnection("127.0.0.1", 5556);
             File file = new File(args[0]);
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;

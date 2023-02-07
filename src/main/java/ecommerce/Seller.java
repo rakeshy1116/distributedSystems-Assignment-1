@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Seller {
     private String sellerName;
-    private int sellerId;
+    private Long sellerId;
 
     private List<Integer> feedback; //first int will be thumbs up, second will be thumbs down
     private int itemsSold;
@@ -21,7 +21,7 @@ public class Seller {
 
     private boolean isLoggedin;
 
-    public Seller(String sellerName, int sellerId, List<Integer> feedback, int itemsSold, String password) {
+    public Seller(String sellerName, Long sellerId, List<Integer> feedback, int itemsSold, String password) {
         this.sellerName = sellerName;
         this.sellerId = sellerId;
         this.feedback = feedback;
@@ -38,11 +38,11 @@ public class Seller {
         this.sellerName = sellerName;
     }
 
-    public int getSellerId() {
+    public Long getSellerId() {
         return sellerId;
     }
 
-    public void setSellerId(int sellerId) {
+    public void setSellerId(Long sellerId) {
         this.sellerId = sellerId;
     }
 
