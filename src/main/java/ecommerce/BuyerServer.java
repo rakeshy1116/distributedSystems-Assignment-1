@@ -74,6 +74,9 @@ public class BuyerServer {
                     else if(components[0].equals("3")) {
                         out.println(logoutBuyer(components));
                     }
+                    else if(components[0].equals("4")) {
+                        out.println(addToShoppingCart(components));
+                    }
                     else if (".".equals(inputLine)) {
                         out.println("bye");
                         break;
@@ -155,6 +158,37 @@ public class BuyerServer {
             return "Logged out.. Log in back";
         }
 
+        public String addToShoppingCart(String[] components) {
+            Database db = Database.getInstance();
+            Map<Long,Item> items = db.getItems();
+            Map<Long,Seller> sellers = db.getSellers();
+            Item currentItem = null;
+            synchronized (items) {
+                items = db.getItems();
+                Long reqItemId = Long.parseLong(components[1]);
+                if (!items.containsKey(reqItemId)) {
+                    return "No item found with itemId " + String.valueOf(items.size()) + String.valueOf(sellers.size());
+                } else {
+                    currentItem = items.get(reqItemId);
+                }
+            }
+            Map<Long,List<Item>> shoppingCart = db.getShoppingCart();
+            synchronized (shoppingCart) {
+                if(!shoppingCart.containsKey(Long.parseLong(components[3])))
+                {
+                    shoppingCart.put(Long.parseLong(components[3]),new ArrayList<>());
+                }
+
+                currentItem.setItemQuantity(Integer.parseInt(components[2]));
+                ArrayList<Item> temp = new ArrayList<>();
+                temp.add(currentItem);
+                shoppingCart.put(Long.parseLong(components[3]),temp);
+                db.setShoppingCart(shoppingCart);
+            }
+
+            return "Logged out.. Log in back";
+        }
+
 
 
 
@@ -163,7 +197,7 @@ public class BuyerServer {
 
     public static void main(String[] args) {
         BuyerServer server =  new BuyerServer();
-        server.start(5556);
+        server.start(6666);
     }
 
 }
