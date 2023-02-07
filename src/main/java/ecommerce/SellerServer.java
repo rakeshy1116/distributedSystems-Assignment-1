@@ -75,6 +75,8 @@ public class SellerServer {
 
         public void run() {
             try {
+                final long startTime = System.currentTimeMillis();
+
 
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -107,12 +109,14 @@ public class SellerServer {
                         out.println(displayItemsOnSale(components));
                     }
                     else if (".".equals(inputLine)) {
-                        out.println("bye");
+                        final long endTime = System.currentTimeMillis();
+                        out.println("Seller Server execution time: " + (endTime - startTime));
                         break;
                     }
-                    else
-                    out.println(inputLine);
+
+
                 }
+
                 in.close();
                 out.close();
                 clientSocket.close();

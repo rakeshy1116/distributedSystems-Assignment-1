@@ -12,13 +12,21 @@ public class SellerClient {
         public static void main(String[] args) throws IOException {
             SellerClient client1 = new SellerClient();
             client1.startConnection("127.0.0.1", 7777);
+            final long startTime = System.currentTimeMillis();
+
+
             File file = new File(args[0]);
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
+            String finalMessage = "";
             while ((st = br.readLine()) != null) {
                 String msg1 = client1.sendMessage(st);
+                finalMessage=msg1;
                 System.out.println(msg1);
             }
+            final long endTime = System.currentTimeMillis();
+            System.out.println(finalMessage);
+            System.out.println("Total execution time: " + (endTime - startTime));
 
     }
 
