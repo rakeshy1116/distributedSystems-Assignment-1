@@ -19,7 +19,7 @@ public class BuyerServerFrontEnd {
 
     private static long BuyeridCounter = 0;
 
-    private static BuyerClient client1;
+    private static Client client1;
 
     public static String convertToString(String[] comp, String delimiter){
         StringBuilder sb = new StringBuilder();
@@ -201,8 +201,8 @@ public class BuyerServerFrontEnd {
         }
 
     public static void main(String[] args) {
-        client1 = new BuyerClient();
-        client1.startConnection("127.0.0.1", 6667);
+        client1 = new Client();
+        client1.startConnection(args[0], 6667);
         BuyerServerFrontEnd server =  new BuyerServerFrontEnd();
         server.start(6666);
     }
