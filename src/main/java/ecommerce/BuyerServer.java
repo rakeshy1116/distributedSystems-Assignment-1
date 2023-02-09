@@ -377,7 +377,7 @@ public class BuyerServer {
 
     public static void main(String[] args) {
         BuyerServer server =  new BuyerServer();
-        server.start(6666);
+        server.start(6667);
     }
 
 }

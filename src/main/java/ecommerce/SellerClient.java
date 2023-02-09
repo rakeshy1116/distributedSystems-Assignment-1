@@ -11,7 +11,7 @@ public class SellerClient {
 
         public static void main(String[] args) throws IOException {
             SellerClient client1 = new SellerClient();
-            client1.startConnection("127.0.0.1", 7777);
+            client1.startConnection("127.0.0.1", 7776);
             final long startTime = System.currentTimeMillis();
 
 
