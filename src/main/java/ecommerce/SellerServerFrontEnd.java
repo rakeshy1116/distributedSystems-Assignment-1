@@ -6,7 +6,6 @@ package ecommerce;
 // import com.fasterxml.jackson.databind.ObjectMapper;
 // import com.google.gson.Gson;
 // import ecommerce.Seller;
-import socketTest.EchoClient;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -21,7 +20,7 @@ public class SellerServerFrontEnd {
     private static long SelleridCounter = 0;
     private static long ItemidCounter = 0;
     private ServerSocket serverSocket;
-    private static EchoClient client1;
+    private static Client client1;
 
     public static synchronized long createSellerID()
     {
@@ -43,8 +42,8 @@ public class SellerServerFrontEnd {
 
 
     public static void main(String[] args) {
-        client1 = new EchoClient();
-        client1.startConnection("localhost", 7777);
+        client1 = new Client();
+        client1.startConnection(args[0], 7777);
         SellerServerFrontEnd server =  new SellerServerFrontEnd();
         server.start(7776);
     }
