@@ -349,7 +349,43 @@ public class BuyerServer {
         }
 
         public synchronized String searchItems(String[] components) {
-            return "searched Items";
+            DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();
+            DynamoDBQueryExpression<Buyer> query = new DynamoDBQueryExpression<>();
+//            PaginatedQueryList<Buyer> list = db.query(Buyer.class, query);
+            DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+// Change to your model class
+            PaginatedScanList<Item> list = db.scan(Item.class, scanExpression);
+            Iterator<Item> iter = list.iterator();
+            StringBuilder ans = new StringBuilder();
+
+            while(iter.hasNext())
+            {
+                Item currentItem = iter.next();
+                if(currentItem.getItemCategory()==Integer.parseInt(components[1]))
+                {
+                    List<String> keywords = currentItem.getKeywords();
+                    boolean match = false;
+                    for(int i=0;i<5;i++)
+                    {
+                        for(String keyword:keywords)
+                        {
+                            if(keyword.equals(components[i+2]))
+                            {
+                                match=true;
+                                break;
+                            }
+                        }
+                    }
+                    if(match)
+                    {
+                        ans.append(" Item id: " + currentItem.getItemId() + " its name: " + currentItem.getItemName());
+                        ans.append(" \n");
+                    }
+
+                }
+            }
+
+            return "searched Items list: \n" + ans.toString();
         }
         public synchronized String purchaseHistory(String[] components) {
             DynamoDBMapper db = DynamoDBSample.getInstance().getMapper();

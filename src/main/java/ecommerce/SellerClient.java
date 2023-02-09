@@ -27,6 +27,15 @@ public class SellerClient {
             final long endTime = System.currentTimeMillis();
             System.out.println(finalMessage);
             System.out.println("Total execution time: " + (endTime - startTime));
+            String filename = String.valueOf(startTime)+"_seller"+"_"+args[1];
+            try {
+                FileWriter myWriter = new FileWriter(filename);
+                myWriter.write(finalMessage +"\n"+ "Seller client execution time: " + (endTime - startTime));
+                myWriter.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
 
     }
 
