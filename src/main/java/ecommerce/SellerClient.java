@@ -11,7 +11,7 @@ public class SellerClient {
 
         public static void main(String[] args) throws IOException {
             SellerClient client1 = new SellerClient();
-            client1.startConnection("127.0.0.1", 7776);
+            client1.startConnection("34.172.214.182", 7776);
             final long startTime = System.currentTimeMillis();
 
 
@@ -27,7 +27,7 @@ public class SellerClient {
             final long endTime = System.currentTimeMillis();
             System.out.println(finalMessage);
             System.out.println("Total execution time: " + (endTime - startTime));
-            String filename = String.valueOf(startTime)+"_seller"+"_"+args[1];
+            String filename = String.valueOf(startTime)+"_seller"+"_"+String.valueOf(args[1]);
             try {
                 FileWriter myWriter = new FileWriter(filename);
                 myWriter.write(finalMessage +"\n"+ "Seller client execution time: " + (endTime - startTime));
