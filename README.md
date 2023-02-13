@@ -69,18 +69,17 @@ User will provide item category and five search keywords. then, All the items fr
 
 Refer perfomance-report.pdf file
 
-<h4> Running code in local </h4>
 
-`mvn package` - this command will create a JAR package
+<h4> Running the Application </h4>
 
-Run the JAR files using following commands:
+1. Create jar file using mvn package.
 
-`java -cp ecommerce.jar ecommerce.BuyerServer`
+2. Run the seller server and buyer server using following commands:
 
-`java -cp ecommerce.jar ecommerce.SellerServer`
+``` java -cp ecommerce.jar ecommerce.SellerServer ```
+``` java -cp ecommerce.jar ecommerce.BuyerServer ```
 
-`java -cp ecommerce.jar ecommerce.SellerServerFrontEnd <ipaddress_of_sellerServer>`
+3. Similarly for clients
 
-`java -cp ecommerce.jar ecommerce.BuyerServerFrontEnd <ipaddress_of_buyerServer>`
-
+``` java -cp ecommerce.jar ecommerce.SellerClient ipaddress_of_sellerServer seller1.txt ```
 
