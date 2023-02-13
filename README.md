@@ -3,95 +3,65 @@
 <h3>System design:</h3>
 
 
-Our system has 6 components: 1. seller and 2. buyer client side,  3. server side front end and backend for both seller and buyer. we have used dynamodb for storing item, buyer, seller and shopping cart data. We have implemented the tcp communication using socket programming in java. for performance measures we have deployed our front end and backend of seller and buyer servers in 4 different vms in google cloud with 4 different ip addresses and port numbers.
+Our system has 6 components: 
+1. Client side Seller 
+2. Client side Buyer
+3. Server side Seller
+4. Server side Buyer
+5. Product and 
+6. Customer Databases 
+
+We have used dynamodb for storing item, buyer, seller and shopping cart data. We have implemented the tcp communication using socket programming in java. for performance measures we have deployed our front end and backend of seller and buyer servers in 4 different virtual machines in google cloud with 4 different ip addresses and port numbers.
 
 <h3>Assumptions:</h3>
 
-1. while creating account for buyer and seller, we are checking if already an account is present with given username, and creating the account only if it is not present.
-2. for login, we are checking if user has already registered or not, and also checking if passwords matches with the one given at time of registration.
-3. seller rating is calculated based on average of (+1 thumbs up and -1 thumbs down).
-4. for creating item, unique id is generated in the program and along with other attributes, item is stored in database.
-5. for updating item price, first check is done for given itemid, price is updated if it is present.
-6. similarly for remove item, and only given no of quantities are reduced.
-7. all the items with sellerid equal to given seller id are displayed
-
-
-<h4> Buyer </h4>
-
-1. created a table for shopping cart, where buyer id is the primary key for this table and it has list of items.
-2. for remove and clear shopping cart, those items list will be updated and removed to reflect the changes.
-3. when a buyer provides feedback, seller record will be updated.
+1. While creating account for buyer and seller, we are checking if already an account is present with given username, and creating the account only if it is not present.
+2. For login, we are checking if user has already registered or not, and also checking if passwords matches with the one given at time of registration.
+3. Seller rating is calculated based on average of feedbacks (+1 thumbs up and -1 thumbs down).
+4. For creating item, unique id is generated in the serverprogram and along with other attributes, item is stored in database.
+5. For updating item price and remove item methods, first check is done for given itemid, price is updated only if it is present and only given no of quantities are reduced
+7. In display item functions, all the items with sellerid equal to given seller id are displayed.
+8. Created a table for shopping cart, where buyer id is the primary key for this table and it has list of items.
+9. For remove and clear shopping cart, the items list will be updated and removed to reflect the changes for the given buyer id.
+10. When a buyer provides feedback, corresponding seller record will be updated.
 
 <h4>Semantics for search function:</h4>
 
-user will provide item category and five search keywords.
-
-all the items from this category will be filtered and check if any of the search keywords match with the keywords given at the time of item posting(creation). Only those items which have atleast one match will be returned.
+User will provide item category and five search keywords. then, All the items from this category will be filtered and check is done, if any of the search keywords match with the keywords given at the time of item creation. Only those items which have atleast one match will be returned.
 
 
-What works
+<h3>What works</h3>
 
-Seller functions:
+<h4>Seller functions:</h4>
 
-Create an account: sets up username and password
-Login: provide username and password
-Logout
-Get seller rating
-Put an item for sale: provide all item characteristics and quantity
-Change the sale price of an item: provide item id and new sale price
-Remove an item from sale: provide item id and quantity
-Display items currently on sale put up by this seller
+1. Create an account
+2. Login
+3. Logout
+4. Get seller rating
+5. Put an item for sale
+6. Change the sale price of an item
+7. Remove an item from sale
+8. Display items 
+
+<h4>Buyer functions:</h4>
+
+1. Create an account
+2. Login
+3. Logout
+4. Search items for sale
+5. Add item to the shopping cart
+6. Remove item from the shopping cart
+7. Clear the shopping cart
+8. Display shopping cart
+9. Provide feedback
+10. Get seller rating
+
+<h3> What doesn't works: </h3>
+
+1. Get buyer purchase history (since make purchase is not implemented it returns empty output).
 
 
-Buyer functions:
+<h4> Performances </h4>
 
-Create an account: sets up username and password
-Login: provide username and password
-Logout
-Search items for sale: provide an item category and up to five keywords
-Add item to the shopping cart: provide item id and quantity
-Remove item from the shopping cart: provide item id and quantity
-Clear the shopping cart
-Display shopping cart
-Provide feedback: thumbs up or down for each item purchased, at most one feedback per purchased item
-Get seller rating: provide seller id
+Refer perfomance-report.pdf file
 
-What doesnt works:
-
-Get buyer purchase history (since make purchase is not implemented it returns empty output).
-
-
-Performances
-
-Seller
-
-1. 1256
-2. 2065
-3. 1656
-4. 1492
-5. 1520
-6. 1644
-7. 973
-8. 10101
-
-13636
-
-throughput - 1676227107835 end time: 1676227264118
-156313
-
-Buyer
-
-1. 1213
-2. 1425
-3. 2524
-4. 2604
-5. 1647
-6. 1266
-7. 1231
-8. 423
-9. 985
-10. 5406
-11. 1917
-
-throughput - 1676227111020 end time: 1676227277875
-166889
