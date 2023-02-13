@@ -69,15 +69,17 @@ User will provide item category and five search keywords. then, All the items fr
 
 Refer perfomance-report.pdf file
 
+
 <h4> Running the Application </h4>
 
 1. Create jar file using mvn package.
+
 2. Run the seller server and buyer server using following commands:
-  
+
 ``` java -cp ecommerce.jar ecommerce.SellerServer ```
 ``` java -cp ecommerce.jar ecommerce.BuyerServer ```
 
 3. Similarly for clients
 
-``` java -cp ecommerce.jar ecommerce.SellerClient ip_address_server seller1.txt ```
-  
+``` java -cp ecommerce.jar ecommerce.SellerClient ipaddress_of_sellerServer seller1.txt ```
+
