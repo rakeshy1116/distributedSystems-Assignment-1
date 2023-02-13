@@ -75,6 +75,7 @@ Refer perfomance-report.pdf file
 2. Run the seller server and buyer server using following commands:
   
 ``` java -cp ecommerce.jar ecommerce.SellerServer ```
+``` java -cp ecommerce.jar ecommerce.BuyerServer ```
 
 3. Similarly for clients
 
