@@ -1,5 +1,9 @@
 <h2> Distributed Systems Assignment-1 </h2>
 
+<h3>Team Members:</h3>
+1. Rakesh Chowdary Yarlagadda
+2. Gautam Gottipatti
+
 <h3>System design:</h3>
 
 
