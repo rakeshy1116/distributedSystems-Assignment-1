@@ -2,8 +2,1000 @@
 2 0 hello
 3 0
 5 0 1 2
+6 0
 7 0
+8 0
 9 1
-11 0
-10 2 mobile call cheap black flip
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
+1 rakesh hello
+2 0 hello
+3 0
+5 0 1 2
+6 0
+7 0
+8 0
+9 1
 .

@@ -119,10 +119,8 @@ public class SellerServerFrontEnd {
                         out.println(displayItemsOnSale(components));
                     }
                     else if (".".equals(inputLine)) {
-                        out.println("bye");
                         final long endTime = System.currentTimeMillis();
                         out.println("Seller Server execution start time: " + startTime + " end time: " + endTime);
-
                         break;
                     }
                     else

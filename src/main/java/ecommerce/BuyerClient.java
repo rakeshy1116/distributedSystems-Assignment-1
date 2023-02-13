@@ -56,7 +56,7 @@ public class BuyerClient {
             final long endTime = System.currentTimeMillis();
             System.out.println(finalMessage);
             System.out.println("Buyer client execution time: " + (endTime - startTime));
-            String filename = String.valueOf(startTime)+"_buyer"+"_"+args[1];
+            String filename = String.valueOf(startTime)+"_buyer"+"_"+String.valueOf(args[1]);
             try {
                 FileWriter myWriter = new FileWriter(filename);
                 myWriter.write(finalMessage + "\n" + "Buyer client execution time: " + (endTime - startTime));
